@@ -10,18 +10,9 @@ function mostrarResultado() {
 
 //função que conta o número de vogais da palavra
 function contarVogais(palavra: string) : number {
-    let cont: number = 0;                   //contador
+    //recebe um array com todas as vogais encontradas na palavra, ou null caso não hajam vogais
+    let vogais = palavra.match(/[aeiou]/g);
 
-    for(let i=0; i<palavra.length; i++) {   //percorre todas as letras da palavra
-        switch (palavra[i]) {               //verifica se a letra corrente corresponde a uma vogal
-            case 'a':
-            case 'e':
-            case 'i':
-            case 'o':
-            case 'u':
-                cont++;                     //em caso positivo, incrementa o contador
-                break;                      //sai do laço switch
-        }
-    }
-    return cont;                            //retorna o número total de vogais encontradas
+    //retorna 0 caso 'vogais' seja nulo, senão, retorna o tamanho do array de vogais 
+    return vogais == null ? 0 : vogais.length;
 }
