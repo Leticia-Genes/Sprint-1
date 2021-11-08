@@ -10,7 +10,7 @@ function mostrarResultado() {
 //função que conta o número de vogais da palavra
 function contarVogais(palavra) {
     //recebe um array com todas as vogais encontradas na palavra, ou null caso não hajam vogais
-    var vogais = palavra.match(/[aeiou]/g);
+    var vogais = palavra.match(/[aeiouàáéíóúâêôãõ]/gi);
     //retorna 0 caso 'vogais' seja nulo, senão, retorna o tamanho do array de vogais 
     return vogais == null ? 0 : vogais.length;
 }
